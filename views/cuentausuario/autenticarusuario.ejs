@@ -1,0 +1,31 @@
+<div style="border:1px solid; border-radius: 5px;" class="login-box">
+  <!--Logo del software-->
+  <div class="login-logo">
+    IMP::Internal Management Processes
+  </div><!-- /.login-logo -->
+  <div class="login-box-body">    
+    <p class="login-box-msg">Iniciar Session</p>    
+    <form class="formulariogeneral" action="<%= oVista.accion %>" method="post">
+      <div class="form-group has-feedback">
+        <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Email">
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+      </div>      
+      <div class="form-group has-feedback">
+        <input type="password" name="contrasena" id="contrasena" class="form-control" placeholder="Password">
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>      
+      <div class="row">        
+        <div class="col-xs-8">
+          <div class="checkbox icheck">
+            <label>
+              <input type="checkbox" name="recordar" id="recordar"> No cerrar session
+            </label>
+          </div>
+        </div><!-- /.col -->
+        <div class="col-xs-4">
+          <button type="button" class="btn btn-primary btn-block btn-flat" onclick="enviarFormulario()">Ingresar</button>
+        </div><!-- /.col -->
+      </div>
+    </form>
+  </div><!-- /.login-box-body -->
+</div><!-- /.login-box -->

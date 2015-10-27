@@ -1,0 +1,39 @@
+<!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar">
+  <!-- sidebar: style can be found in sidebar.less -->
+  <section class="sidebar">
+    <!-- search form -->
+    <form action="#" method="get" class="sidebar-form">
+      <div class="input-group">
+        <input type="text" name="q" class="form-control" placeholder="Buscar Modulo...">
+        <span class="input-group-btn">
+          <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
+        </span>
+      </div>
+    </form>
+    <!-- /.search form -->
+    <!-- sidebar menu: : style can be found in sidebar.less -->
+    <ul class="sidebar-menu">
+      <li class="header">Modulos</li>                    
+
+        <% if (oVista.modulosMenu) {         
+          oVista.modulosMenu.forEach( function (modulo) { %>
+            <li id="<%= modulo.nombreruta %>" class="treeview" onclick="mostrarControladoresModulo(id)">
+              <a href="#">
+                <i class="fa fa-files-o"></i>
+                <span><%= modulo.nombrepanel %></span>
+              </a>
+            
+              <ul class="treeview-menu menu-open">
+              <% modulo.controlador.forEach(function (controlador){ %>
+                <li><a href="#"><i class="fa fa-circle-o"></i><%= controlador.nombrepanel %></a></li>
+              <% }); %>
+              </ul>
+
+            </li>
+        <%});}%>
+
+    </ul>
+  </section>
+  <!-- /.sidebar -->
+</aside>
